@@ -1,22 +1,13 @@
 @startuml Nutrix
 
-<style>
-title {
+skinparam sequenceMessageAlign center
+title System Context Diagram for Nutrix Core System
 
-    FontSize 18
-}
-
-rectangle {
-    BackgroundColor DeepSkyBlue
-    TextAlignment center
-}
-
-</style>
-
-title Nutrix Admin
+caption System Context
 
 
-rectangle nutrixUser[
+
+agent nutrixUser[
     <b> Nutrix User 
     ----
     A Nutrix Platform user,
@@ -24,7 +15,14 @@ rectangle nutrixUser[
     professional.
 ]
 
-rectangle nutrixCore [
+component patientManagementSystem [
+    <b> Patient Management System
+    ----
+    Stores all patient information
+    and events
+]
+
+collections nutrixCore [
     <b> Nutrix Core System 
     ----
     Manages user information
@@ -32,9 +30,56 @@ rectangle nutrixCore [
     in the Nutrix Platform
 ]
 
+component fctSystem [
+    <b> FCT System
+    ----
+    System for viewing foods 
+    with their nutricional value.
+]
+
+
+[nutrixUser] --> [patientManagementSystem]: Uses
+
 [nutrixUser] <-- [nutrixCore]: Gives access to
 
+[nutrixUser] --> [fctSystem]: Uses
 
+
+[nutrixCore] --> [fctSystem]: Loads
+
+[nutrixCore] --> [patientManagementSystem]: Loads
+
+
+<style>
+
+
+
+title {
+    FontSize 18
+    
+}
+
+caption{
+    HorizontalAlignment center
+}
+
+rectangle {
+    BackgroundColor DeepSkyBlue
+    FontColor White
+    TextAlignment center
+}
+
+agent {
+    BackgroundColor Navy
+    FontColor White
+}
+
+component{
+    BackgroundColor Grey
+    FontColor White
+}
+
+</style>
 
 
 @enduml
