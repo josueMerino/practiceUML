@@ -1,1 +1,4 @@
 *.png
+*.svg
+out/Container
+out

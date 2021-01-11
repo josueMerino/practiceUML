@@ -59,7 +59,9 @@ rectangle FCT_System[
 [Backend_Application] --> [Database]: Gives access to
 [Backend_Application] <- [Single_Page_App]: Gives access to
 [Backend_Application] -> [Single_Page_App]: Gives access to
+[nutrixUser] --> [FCT_System]: Gives access to
+[nutrixUser] --> [Patient_Management_System]: Gives access to
+[Single_Page_App] --> [FCT_System]: Gives access to
 [Single_Page_App] -> [Patient_Management_System]: Gives access to
-[Single_Page_App] -> [FCT_System]: Gives access to
 
 @enduml
