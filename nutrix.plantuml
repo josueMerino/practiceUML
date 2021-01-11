@@ -32,6 +32,8 @@ rectangle nutrixCore [
     in the Nutrix Platform
 ]
 
+[nutrixUser] <-- [nutrixCore]: Gives access to
+
 
 
 
