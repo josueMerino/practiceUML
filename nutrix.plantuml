@@ -1,0 +1,38 @@
+@startuml Nutrix
+
+<style>
+title {
+
+    FontSize 18
+}
+
+rectangle {
+    BackgroundColor DeepSkyBlue
+    TextAlignment center
+}
+
+</style>
+
+title Nutrix Admin
+
+
+rectangle nutrixUser[
+    <b> Nutrix User 
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+rectangle nutrixCore [
+    <b> Nutrix Core System 
+    ----
+    Manages user information
+    and acces to different Apps
+    in the Nutrix Platform
+]
+
+
+
+
+@enduml
