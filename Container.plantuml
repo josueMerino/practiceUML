@@ -9,6 +9,57 @@ rectangle nutrixUser[
     professional.
 ]
 
-Node Nutrix_Core
+Node "Nutrix Core"{
+
+
+rectangle Backend_Application[
+    <b> Backend Application
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+rectangle Single_Page_App[
+    <b> Single-Page App
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+Database Database[
+    <b> Database
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+}
+
+rectangle Patient_Management_System[
+    <b> Patient Management System
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+rectangle FCT_System[
+    <b> FCT System
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+[nutrixUser] --> [Backend_Application]: Gives access to
+[nutrixUser] --> [Single_Page_App]: Gives access to
+[Backend_Application] --> [Database]: Gives access to
+[Backend_Application] <- [Single_Page_App]: Gives access to
+[Backend_Application] -> [Single_Page_App]: Gives access to
+[Single_Page_App] -> [Patient_Management_System]: Gives access to
+[Single_Page_App] -> [FCT_System]: Gives access to
 
 @enduml
