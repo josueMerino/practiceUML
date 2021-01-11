@@ -1,0 +1,14 @@
+@startuml
+
+
+rectangle nutrixUser[
+    <b> Nutrix User 
+    ----
+    A Nutrix Platform user,
+    typically  a nutrition
+    professional.
+]
+
+Node Nutrix_Core
+
+@enduml
