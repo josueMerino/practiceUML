@@ -1,58 +1,24 @@
 @startuml
 
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-rectangle nutrixUser[
-    <b> Nutrix User 
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
+LAYOUT_WITH_LEGEND()
 
-Node "Nutrix Core"{
+Person(nutrixUser, "Nutrix User", "A Nutrix Platform user, typically  a nutrition professional.")
 
 
-rectangle Backend_Application[
-    <b> Backend Application
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
+System_Boundary(c1, "NutriX Core") {
 
-rectangle Single_Page_App[
-    <b> Single-Page App
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
+    Container(Backend_Application, "Backend Application", "Technology", "Optional Description")
+    Container(Single_Page_App, "Single-Page App", "Technology", "Optional Description")
 
-Database Database[
-    <b> Database
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
+    ContainerDb(Database, "Database", "Microsoft SQL", "Optional Description")
 
 }
 
-rectangle Patient_Management_System[
-    <b> Patient Management System
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
+System_Ext(Patient_Management_System, "Patient Management System")
+System_Ext(FCT_System, "FCT System")
 
-rectangle FCT_System[
-    <b> FCT System
-    ----
-    A Nutrix Platform user,
-    typically  a nutrition
-    professional.
-]
 
 [nutrixUser] --> [Backend_Application]: Gives access to
 [nutrixUser] --> [Single_Page_App]: Gives access to
